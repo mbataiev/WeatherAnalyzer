@@ -30,8 +30,8 @@ public class WeatherServiceImpl implements WeatherService {
         String weatherDataJson = getWeatherData(cityName).orElseThrow(
                 () -> new ResourceNotFoundException("City", "name", cityName)
         );
-
-        WeatherDataDto weatherDataDto = new JsonParser().jsonToWeatherDto(weatherDataJson);
+        log.debug(weatherDataJson);
+        WeatherDataDto weatherDataDto = JsonParser.jsonToWeatherDto(weatherDataJson);
         WeatherData weatherData = repository.save(mapper.dtoToWeather(weatherDataDto));
 
         return mapper.weatherToDto(weatherData);

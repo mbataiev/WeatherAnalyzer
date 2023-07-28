@@ -36,16 +36,12 @@ public class JsonParserTest {
     @Test
     public void testInvalidJson() {
         String invalidJson = "{\"coord\":{\"lon:-0.125ather\":[{\"id\":804,\"main\":\"Clouds\",\"description\":\"overcast clouds\",\"icon\":\"04d\"}],\"base\":\"stations\",\"main\":{\"temp\":290.67,\"feels_like\":290.7,\"temp_min\":289.69,\"temp_max\":291.63,\"pressure\":1005,\"humidity\":85},\"visibility\":10000,\"wind\":{\"speed\":4.63,\"deg\":250},\"clouds\":{\"all\":100},\"dt\":1690527843,\"sys\":{\"type\":2,\"id\":2075535,\"country\":\"GB\",\"sunrise\":1690517856,\"sunset\":1690574170},\"timezone\":3600,\"id\":2643743,\"name\":\"London\",\"cod\":200}";
-        assertThrows(ResourceNotFoundException.class, () -> {
-                    JsonParser.jsonToWeatherDto(invalidJson);
-                }
+        assertThrows(ResourceNotFoundException.class, () -> JsonParser.jsonToWeatherDto(invalidJson)
         );    }
 
     @Test
     public void testNullJson() {
-        assertThrows(ResourceNotFoundException.class, () -> {
-                    JsonParser.jsonToWeatherDto(null);
-                }
+        assertThrows(ResourceNotFoundException.class, () -> JsonParser.jsonToWeatherDto(null)
         );
     }
 }

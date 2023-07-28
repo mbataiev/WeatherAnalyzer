@@ -1,6 +1,6 @@
 package com.app.weather.mapper;
 
-import com.app.weather.dto.WeatherDataDto;
+import com.app.base.domains.WeatherDataDto;
 import com.app.weather.entity.WeatherData;
 import org.mapstruct.Mapper;
 

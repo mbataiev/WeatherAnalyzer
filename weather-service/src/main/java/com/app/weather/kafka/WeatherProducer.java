@@ -1,6 +1,6 @@
 package com.app.weather.kafka;
 
-import com.app.weather.dto.WeatherDataDto;
+import com.app.base.domains.WeatherDataDto;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.admin.NewTopic;

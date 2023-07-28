@@ -1,6 +1,6 @@
 package com.app.weather.service;
 
-import com.app.weather.dto.WeatherDataDto;
+import com.app.base.domains.WeatherDataDto;
 import com.app.weather.entity.WeatherData;
 import com.app.weather.exception.ResourceNotFoundException;
 import com.app.weather.mapper.JsonParser;

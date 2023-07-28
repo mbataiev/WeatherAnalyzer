@@ -1,6 +1,6 @@
 package com.app.weather.mapper;
 
-import com.app.weather.dto.WeatherDataDto;
+import com.app.base.domains.WeatherDataDto;
 import com.app.weather.exception.ResourceNotFoundException;
 import com.google.gson.JsonObject;
 import lombok.extern.slf4j.Slf4j;

@@ -1,6 +1,6 @@
 package com.app.weather.service;
 
-import com.app.weather.dto.WeatherDataDto;
+import com.app.base.domains.WeatherDataDto;
 
 public interface WeatherService {
     WeatherDataDto getWeatherDataFromApi(String cityName);

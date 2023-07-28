@@ -3,7 +3,7 @@ package com.app.weather.mapper;
 import com.app.weather.exception.ResourceNotFoundException;
 import org.junit.jupiter.api.Test;
 
-import com.app.weather.dto.WeatherDataDto;
+import com.app.base.domains.WeatherDataDto;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;

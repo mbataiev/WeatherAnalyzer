@@ -1,6 +1,6 @@
 package com.app.weather.controller;
 
-import com.app.weather.dto.WeatherDataDto;
+import com.app.base.domains.WeatherDataDto;
 import com.app.weather.kafka.WeatherProducer;
 import com.app.weather.service.WeatherService;
 import io.swagger.v3.oas.annotations.tags.Tag;

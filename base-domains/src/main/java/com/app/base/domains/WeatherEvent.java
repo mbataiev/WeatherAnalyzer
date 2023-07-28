@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class WeatherEvent {
     private String message;
-    private String status;
+    private EventStatus status;
     private WeatherDataDto weatherData;
 }

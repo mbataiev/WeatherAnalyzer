@@ -11,4 +11,5 @@ public class WeatherEvent {
     private String message;
     private EventStatus status;
     private WeatherDataDto weatherData;
+    private Long version;
 }

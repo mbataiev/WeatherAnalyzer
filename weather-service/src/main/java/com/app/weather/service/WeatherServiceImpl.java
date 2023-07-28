@@ -32,6 +32,7 @@ public class WeatherServiceImpl implements WeatherService {
         );
         log.debug(weatherDataJson);
         WeatherDataDto weatherDataDto = JsonParser.jsonToWeatherDto(weatherDataJson);
+        weatherDataDto.setCity(cityName);
         WeatherData weatherData = repository.save(mapper.dtoToWeather(weatherDataDto));
 
         return mapper.weatherToDto(weatherData);

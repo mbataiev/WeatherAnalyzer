@@ -19,6 +19,8 @@ public class WeatherData {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(nullable = false)
+    private String city;
+    @Column(nullable = false)
     private String weather;
     @Column(nullable = false)
     private Double temperature;

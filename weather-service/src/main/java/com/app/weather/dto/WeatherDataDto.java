@@ -12,6 +12,8 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class WeatherDataDto {
     private Long id;
+    @NotEmpty(message = "City can not be empty!")
+    private String city;
     @NotEmpty(message = "Weather can not be empty!")
     private String weather;
     @NotEmpty(message = "Temperature can not be empty!")

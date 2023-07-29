@@ -7,8 +7,10 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <artifactId>base-domains</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>base-domains Maven Webapp</name>
+    <groupId>com.app.base</groupId>
     <dependencies>
 
     </dependencies>

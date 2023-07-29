@@ -19,7 +19,7 @@
             <version>${project.gson.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.app.weather</groupId>
+            <groupId>com.app.base</groupId>
             <artifactId>base-domains</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>

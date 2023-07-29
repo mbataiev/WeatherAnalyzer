@@ -8,7 +8,6 @@
     </parent>
     <artifactId>weather-service</artifactId>
     <packaging>jar</packaging>
-    <name>weather-service Maven Webapp</name>
     <properties>
         <project.gson.version>2.8.9</project.gson.version>
     </properties>
@@ -19,7 +18,7 @@
             <version>${project.gson.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.app.weather</groupId>
+            <groupId>com.app.base</groupId>
             <artifactId>base-domains</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>

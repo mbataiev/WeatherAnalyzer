@@ -17,6 +17,7 @@
 	<modules>
 		<module>weather-service</module>
 		<module>base-domains</module>
+		<module>weather-data-processor</module>
 	</modules>
 	<properties>
 		<java.version>17</java.version>

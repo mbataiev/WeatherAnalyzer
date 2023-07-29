@@ -1,7 +1,8 @@
 package com.app.base.domains;
 
 public enum EventStatus {
-    PROCESSING,
+    PROCESSED,
+    SAVED,
     PENDING,
     COMPLETED,
     ERROR

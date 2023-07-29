@@ -1,4 +1,4 @@
-package com.app.base.domains;
+package com.app.data.processor.domains;
 
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;

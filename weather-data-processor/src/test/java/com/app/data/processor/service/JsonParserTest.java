@@ -1,15 +1,13 @@
-package com.app.weather.mapper;
+package com.app.data.processor.service;
 
-import com.app.weather.exception.ResourceNotFoundException;
+import com.app.data.processor.domains.WeatherDataDto;
+import com.app.data.processor.exception.ResourceNotFoundException;
 import org.junit.jupiter.api.Test;
-
-import com.app.base.domains.WeatherDataDto;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @ExtendWith(SpringExtension.class)

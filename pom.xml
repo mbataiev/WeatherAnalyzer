@@ -16,7 +16,6 @@
 	<description>Project to analyse and collect weather info</description>
 	<modules>
 		<module>weather-service</module>
-		<module>base-domains</module>
 		<module>weather-data-processor</module>
 	</modules>
 	<properties>

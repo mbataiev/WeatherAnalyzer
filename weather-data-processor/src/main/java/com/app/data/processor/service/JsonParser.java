@@ -1,13 +1,16 @@
-package com.app.weather.mapper;
+package com.app.data.processor.service;
 
-import com.app.base.domains.WeatherDataDto;
-import com.app.weather.exception.ResourceNotFoundException;
+
+import com.app.data.processor.domains.WeatherDataDto;
+import com.app.data.processor.exception.ResourceNotFoundException;
 import com.google.gson.JsonObject;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
 
 import java.text.DecimalFormat;
 
 @Slf4j
+@Service
 public class JsonParser {
 
     private static final Double FROM_KELVIN_TO_CELSIUS = 273.15;

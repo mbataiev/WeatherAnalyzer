@@ -1,4 +1,4 @@
-package com.app.base.domains;
+package com.app.weather.domains;
 
 public enum EventStatus {
     PROCESSED,

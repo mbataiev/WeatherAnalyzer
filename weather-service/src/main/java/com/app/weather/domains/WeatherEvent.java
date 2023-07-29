@@ -1,4 +1,4 @@
-package com.app.base.domains;
+package com.app.weather.domains;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

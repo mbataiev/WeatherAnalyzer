@@ -17,6 +17,7 @@ public class JsonParser {
     private static final Double FROM_MPH_TO_MS = 0.44704;
 
     public static WeatherDataDto jsonToWeatherDto(String json) {
+        log.debug("Json -> {}",json);
         if (json == null) throw new ResourceNotFoundException("Json", "json", null);
 
         com.google.gson.JsonParser jsonParser = new com.google.gson.JsonParser();

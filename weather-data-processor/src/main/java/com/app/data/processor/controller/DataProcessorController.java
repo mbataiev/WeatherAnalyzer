@@ -20,8 +20,8 @@ public class DataProcessorController {
     private DataProcessorService service;
 
     @PostMapping
-    public WeatherDataDto parseWeatherData(@RequestBody String json,
-                                           @RequestParam("city") String city) {
+    public WeatherDataDto processWeatherData(@RequestBody String json,
+                                             @RequestParam("city") String city) {
         WeatherDataDto processedData = service.parseJson(json);
         processedData.setCity(city);
         log.info("parseWeatherData : Publish data -> {}",processedData);

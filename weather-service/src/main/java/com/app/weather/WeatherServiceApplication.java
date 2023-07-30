@@ -25,11 +25,6 @@ public class WeatherServiceApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(WeatherServiceApplication.class, args);
-        log.info("Info root");
-        log.debug("Debug root");
-        log.warn("Warn root");
-        log.error("Error root");
-        log.trace("Trace root");
     }
 
 }

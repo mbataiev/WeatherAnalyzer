@@ -1,6 +1,6 @@
 package com.app.weather.service;
 
-import com.app.weather.domains.WeatherDataDto;
+import com.app.common.domains.WeatherDataDto;
 import com.app.weather.exception.ProcessingException;
 import com.app.weather.exception.ResourceNotFoundException;
 import lombok.AllArgsConstructor;

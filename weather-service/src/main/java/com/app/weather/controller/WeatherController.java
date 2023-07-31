@@ -1,6 +1,6 @@
 package com.app.weather.controller;
 
-import com.app.weather.domains.WeatherDataDto;
+import com.app.common.domains.WeatherDataDto;
 import com.app.weather.service.WeatherService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;

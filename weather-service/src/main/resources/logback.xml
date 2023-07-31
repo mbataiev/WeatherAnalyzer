@@ -3,7 +3,7 @@
     <springProfile name="dev">
         <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
             <encoder>
-                <pattern>%d{HH:mm:ss.SSS} %class.%line - %msg%n</pattern>
+                <pattern>%d{HH:mm:ss.SSS} %-5level %class.%line - %msg%n</pattern>
             </encoder>
         </appender>
 
@@ -16,7 +16,7 @@
                 <totalSizeCap>1GB</totalSizeCap>
             </rollingPolicy>
             <encoder>
-                <pattern>%d{HH:mm:ss.SSS} %class.%line - %msg%n</pattern>
+                <pattern>%d{HH:mm:ss.SSS} %-5level %class.%line - %msg%n</pattern>
             </encoder>
         </appender>
 
@@ -36,7 +36,7 @@
                 <totalSizeCap>1GB</totalSizeCap>
             </rollingPolicy>
             <encoder>
-                <pattern>%d{HH:mm:ss.SSS} %class.%line - %msg%n</pattern>
+                <pattern>%d{HH:mm:ss.SSS} %-5level %class.%line - %msg%n</pattern>
             </encoder>
         </appender>
 

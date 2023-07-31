@@ -8,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/process")
+@RequestMapping("api/v1/process")
 @AllArgsConstructor
 @Slf4j
 @Tag(

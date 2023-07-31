@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 @Service
 @AllArgsConstructor
 @Slf4j
-public class WeatherProducer {
+public class EventProducer {
 
     private final NewTopic topic;
     private final KafkaTemplate<String, WeatherEvent> template;

@@ -1,8 +1,6 @@
 server:
   port: 8081
 
-
-
 spring:
   profiles:
     active: dev
@@ -12,4 +10,4 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
     topic:
-      name: weather_data
+      name: weather_events

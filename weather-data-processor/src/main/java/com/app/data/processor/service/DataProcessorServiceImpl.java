@@ -22,7 +22,12 @@ public class DataProcessorServiceImpl implements DataProcessorService {
 
     @Override
     public void publishEvent(WeatherDataDto processedData) {
-        WeatherEvent event = new WeatherEvent("Created", EventStatus.PROCESSED, processedData, 1L);
+        WeatherEvent event = WeatherEvent.builder()
+                .message("Successfully processed")
+                .status(EventStatus.PROCESSED)
+                .weatherData(processedData)
+                .version(1L)
+                .build();
         log.info("publishEvent : Published event -> {}", event);
         producer.sendMessage(event);
     }

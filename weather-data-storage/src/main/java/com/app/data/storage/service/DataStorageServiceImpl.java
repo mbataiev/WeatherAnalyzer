@@ -21,9 +21,6 @@ public class DataStorageServiceImpl implements DataStorageService {
 
     @Override
     public void processEvent(WeatherEvent event) {
-        if (event.getStatus() == EventStatus.ERROR) {
-            throw new ProcessingException(String.format("Processing exception with event -> %s", event));
-        }
         if (event.getStatus() == EventStatus.PROCESSED) {
             WeatherDataDto savedData = saveWeather(event.getWeatherData());
             WeatherEvent savedEvent = WeatherEvent.builder()

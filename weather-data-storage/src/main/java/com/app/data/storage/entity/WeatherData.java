@@ -12,11 +12,13 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "weather-data")
+@Table(name = "weather")
 public class WeatherData {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false)
+    private String city;
     @Column(nullable = false)
     private String weather;
     @Column(nullable = false)

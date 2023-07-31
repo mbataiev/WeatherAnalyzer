@@ -4,12 +4,13 @@ import com.app.common.domains.EventStatus;
 import com.app.common.domains.WeatherDataDto;
 import com.app.common.domains.WeatherEvent;
 import com.app.data.storage.entity.WeatherData;
-import com.app.data.storage.exception.ProcessingException;
 import com.app.data.storage.kafka.EventProducer;
 import com.app.data.storage.mapper.WeatherMapper;
 import com.app.data.storage.repository.WeatherRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDate;
 
 @Service
 @AllArgsConstructor
@@ -43,5 +44,12 @@ public class DataStorageServiceImpl implements DataStorageService {
     @Override
     public void publishEvent(WeatherEvent event) {
         producer.sendMessage(event);
+    }
+
+    @Override
+    public WeatherDataDto getWeatherByDateAndCity(String city, String date) {
+        // TODO: 31.07.2023 add date validation
+        LocalDate searchDate = LocalDate.parse(date);
+        return mapper.weatherToDto(repository.findByCityAndDate(city, searchDate));
     }
 }

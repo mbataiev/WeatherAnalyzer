@@ -9,5 +9,5 @@ public interface DataStorageService {
 
     void publishEvent(WeatherEvent event);
 
-
+    WeatherDataDto getWeatherByDateAndCity(String city, String date);
 }

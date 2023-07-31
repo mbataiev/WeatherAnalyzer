@@ -1,7 +1,7 @@
 package com.app.data.processor.service;
 
 
-import com.app.data.processor.domains.WeatherDataDto;
+import com.app.common.domains.WeatherDataDto;
 import com.app.data.processor.exception.ResourceNotFoundException;
 import com.google.gson.JsonObject;
 import lombok.extern.slf4j.Slf4j;

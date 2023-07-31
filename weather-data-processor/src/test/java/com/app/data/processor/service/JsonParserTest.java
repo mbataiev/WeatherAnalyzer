@@ -1,6 +1,6 @@
 package com.app.data.processor.service;
 
-import com.app.data.processor.domains.WeatherDataDto;
+import com.app.common.domains.WeatherDataDto;
 import com.app.data.processor.exception.ResourceNotFoundException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

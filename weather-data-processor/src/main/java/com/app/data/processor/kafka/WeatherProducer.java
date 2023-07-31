@@ -1,6 +1,6 @@
 package com.app.data.processor.kafka;
 
-import com.app.data.processor.domains.WeatherEvent;
+import com.app.common.domains.WeatherEvent;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.admin.NewTopic;

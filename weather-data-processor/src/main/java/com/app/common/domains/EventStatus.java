@@ -1,4 +1,4 @@
-package com.app.data.processor.domains;
+package com.app.common.domains;
 
 public enum EventStatus {
     PROCESSED,

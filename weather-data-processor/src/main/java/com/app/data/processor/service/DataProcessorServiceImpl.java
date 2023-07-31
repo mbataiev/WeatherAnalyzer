@@ -3,7 +3,7 @@ package com.app.data.processor.service;
 import com.app.data.processor.domains.EventStatus;
 import com.app.data.processor.domains.WeatherDataDto;
 import com.app.data.processor.domains.WeatherEvent;
-import com.app.data.processor.kafka.producer.WeatherProducer;
+import com.app.data.processor.kafka.WeatherProducer;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

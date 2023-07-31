@@ -1,4 +1,4 @@
-package com.app.data.processor.kafka.producer;
+package com.app.data.processor.kafka;
 
 import com.app.data.processor.domains.WeatherEvent;
 import lombok.AllArgsConstructor;

@@ -1,8 +1,8 @@
 package com.app.data.analytic.service;
 
 import com.app.data.analytic.repository.AnalyticRepository;
-import com.app.domains.WeatherDataDto;
-import com.app.domains.WeatherEvent;
+import com.app.common.domains.WeatherDataDto;
+import com.app.common.domains.WeatherEvent;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

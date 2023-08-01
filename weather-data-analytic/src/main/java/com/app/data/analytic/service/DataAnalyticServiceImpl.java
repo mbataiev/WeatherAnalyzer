@@ -2,10 +2,13 @@ package com.app.data.analytic.service;
 
 import com.app.common.domains.EventStatus;
 import com.app.data.analytic.entity.WeatherData;
+import com.app.data.analytic.exception.ResourceNotFoundException;
 import com.app.data.analytic.mapper.WeatherMapper;
 import com.app.data.analytic.repository.AnalyticRepository;
 import com.app.common.domains.WeatherDataDto;
 import com.app.common.domains.WeatherEvent;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -32,12 +35,22 @@ public class DataAnalyticServiceImpl implements DataAnalyticService {
     }
 
     @Override
-    public Double getAvgTempByPeriodAndCity(LocalDate startDate, LocalDate endDate, String city) {
-        return null;
+    public Double getAvgTempByPeriodAndCity(@NotNull LocalDate startDate,
+                                            @NotNull LocalDate endDate,
+                                            @NotBlank String city) {
+        repository.findByCity(city).orElseThrow(
+                () -> new ResourceNotFoundException("City", "city", city)
+        );
+        return repository.findAvgTemperatureByCityAndPeriod(city, startDate, endDate);
     }
 
     @Override
-    public String getPopularWeatherByPeriodAndCity(LocalDate startDate, LocalDate endDate, String city) {
-        return null;
+    public String getPopularWeatherByPeriodAndCity(@NotNull LocalDate startDate,
+                                                   @NotNull LocalDate endDate,
+                                                   @NotBlank String city) {
+        repository.findByCity(city).orElseThrow(
+                () -> new ResourceNotFoundException("City", "city", city)
+        );
+        return repository.findPopularWeatherByCityAndPeriod(city, startDate, endDate);
     }
 }

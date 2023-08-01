@@ -7,13 +7,18 @@ import com.app.data.storage.entity.WeatherData;
 import com.app.data.storage.kafka.EventProducer;
 import com.app.data.storage.mapper.WeatherMapper;
 import com.app.data.storage.repository.WeatherRepository;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Service
 @AllArgsConstructor
+@Slf4j
 public class DataStorageServiceImpl implements DataStorageService {
 
     private WeatherRepository repository;
@@ -47,9 +52,11 @@ public class DataStorageServiceImpl implements DataStorageService {
     }
 
     @Override
-    public WeatherDataDto getWeatherByDateAndCity(String city, String date) {
-        // TODO: 31.07.2023 add date validation
+    public WeatherDataDto getWeatherByDateAndCity(@NotNull String city,
+                                                  @NotNull @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) String date) {
         LocalDate searchDate = LocalDate.parse(date);
-        return mapper.weatherToDto(repository.findByCityAndDate(city, searchDate));
+        List<WeatherData> list = repository.findByCityAndDate(city, searchDate);
+        log.debug(list.toString());
+        return list.isEmpty() ? null : mapper.weatherToDto(list.get(0));
     }
 }

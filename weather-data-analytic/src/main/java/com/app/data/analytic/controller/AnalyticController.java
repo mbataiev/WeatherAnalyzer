@@ -29,7 +29,6 @@ public class AnalyticController {
                                                             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate) {
         Double averageTemperature = service.getAvgTempByPeriodAndCity(startDate, endDate, city);
         return ResponseEntity.ok(averageTemperature);
-
     }
 
     @GetMapping("/weather")

@@ -22,7 +22,7 @@ public class WeatherServiceImpl implements WeatherService {
 
     private static final String BASE_URL = "http://api.openweathermap.org/data/2.5/weather?q=";
     private static final String API_KEY = "&appid=00bfe34f2cd30617524339d4a409a99b";
-    private static final String DATA_PROCESSOR = "http://localhost:8081/process?city=";
+    private static final String DATA_PROCESSOR = "http://localhost:8081/api/v1/process?city=";
 
     @Override
     public WeatherDataDto getWeatherDataFromApi(String cityName) {

@@ -1,0 +1,58 @@
+<configuration>
+
+    <springProfile name="dev">
+        <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+                <pattern>%d{HH:mm:ss.SSS} %-5level %class.%line - %msg%n</pattern>
+            </encoder>
+        </appender>
+
+        <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <file>logs/application.log</file>
+            <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+                <maxFileSize>10MB</maxFileSize>
+                <fileNamePattern>logs/application.%d{yyyy-MM-dd_HH-mm}.%i.log</fileNamePattern>
+                <maxHistory>5</maxHistory>
+                <totalSizeCap>1GB</totalSizeCap>
+            </rollingPolicy>
+            <encoder>
+                <pattern>%d{HH:mm:ss.SSS} %-5level %class.%line - %msg%n</pattern>
+            </encoder>
+        </appender>
+
+        <root level="debug">
+            <appender-ref ref="CONSOLE" />
+            <appender-ref ref="FILE" />
+        </root>
+    </springProfile>
+
+    <springProfile name="prod">
+        <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <file>logs/application.log</file>
+            <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+                <maxFileSize>10MB</maxFileSize>
+                <fileNamePattern>logs/application.%d{yyyy-MM-dd_HH-mm}.%i.log</fileNamePattern>
+                <maxHistory>5</maxHistory>
+                <totalSizeCap>1GB</totalSizeCap>
+            </rollingPolicy>
+            <encoder>
+                <pattern>%d{HH:mm:ss.SSS} %-5level %class.%line - %msg%n</pattern>
+            </encoder>
+        </appender>
+
+        <root level="info">
+            <appender-ref ref="FILE" />
+        </root>
+    </springProfile>
+
+    <logger name="com.app.auth" level="info" additivity="false">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE" />
+    </logger>
+
+    <root level="error">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE" />
+    </root>
+
+</configuration>

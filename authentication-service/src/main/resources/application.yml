@@ -1,0 +1,14 @@
+server:
+  port: 8084
+
+spring:
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/users_db
+    username: root
+    password: qwer1234
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update

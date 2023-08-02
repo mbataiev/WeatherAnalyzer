@@ -2,6 +2,8 @@ server:
   port: 8081
 
 spring:
+  application:
+    name: WEATHER-DATA-PROCESSOR-SERVICE
   profiles:
     active: dev
   kafka:

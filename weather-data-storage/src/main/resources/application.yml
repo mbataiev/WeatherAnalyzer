@@ -2,6 +2,8 @@ server:
   port: 8082
 
 spring:
+  application:
+    name: WEATHER-DATA-STORAGE-SERVICE
   profiles:
     active: dev
   datasource:

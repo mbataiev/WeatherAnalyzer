@@ -2,6 +2,8 @@ server:
   port: 8083
 
 spring:
+  application:
+    name: WEATHER-DATA-ANALYTIC-SERVICE
   profiles:
     active: dev
   datasource:

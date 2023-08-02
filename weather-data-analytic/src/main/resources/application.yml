@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: WEATHER-DATA-ANALYTIC-SERVICE
+    name: DATA-ANALYTIC-SERVICE
   profiles:
     active: dev
   datasource:

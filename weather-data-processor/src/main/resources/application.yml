@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: WEATHER-DATA-PROCESSOR-SERVICE
+    name: DATA-PROCESSOR-SERVICE
   profiles:
     active: dev
   kafka:

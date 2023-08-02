@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: WEATHER-DATA-STORAGE-SERVICE
+    name: DATA-STORAGE-SERVICE
   profiles:
     active: dev
   datasource:

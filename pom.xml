@@ -21,6 +21,7 @@
         <module>weather-data-analytic</module>
 		<module>authentication-service</module>
 		<module>service-registry</module>
+		<module>api-gateway</module>
 	</modules>
 	<properties>
 		<java.version>17</java.version>

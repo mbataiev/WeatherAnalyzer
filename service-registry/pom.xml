@@ -7,7 +7,7 @@
 		<artifactId>weather-app</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>net.javaguides</groupId>
+	<groupId>com.app.service.regisrty</groupId>
 	<artifactId>service-registry</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>service-registry</name>

@@ -33,7 +33,7 @@ public class AuthFilter extends AbstractGatewayFilterFactory<AuthFilter.Config> 
                     authHeader = authHeader.substring(7);
                 }
                 try {
-                    // TODO: 02.08.2023 add microservice name
+                    // TODO: 02.08.2023 add microservice name //AUTH-SERVICE
                     restTemplate.getForObject("http://localhost:9191/api/v1/auth/validate?token=" + authHeader, String.class);
                 }catch (Exception e){
                     throw new RuntimeException("Error while rest call to auth service");

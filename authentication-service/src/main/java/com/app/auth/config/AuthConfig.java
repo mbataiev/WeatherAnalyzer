@@ -24,12 +24,11 @@ public class AuthConfig {
         return new CustomUserDetailsService();
     }
 
-
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.csrf().disable()
                 .authorizeHttpRequests()
-                .requestMatchers(BASE_DOMAIN + "/register", BASE_DOMAIN + "/token", BASE_DOMAIN + "/validate").permitAll()
+                .requestMatchers(BASE_DOMAIN + "/register", BASE_DOMAIN + "/login", BASE_DOMAIN + "/validate").permitAll()
                 .and()
                 .build();
     }

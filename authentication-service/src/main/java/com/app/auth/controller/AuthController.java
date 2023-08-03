@@ -26,7 +26,8 @@ public class AuthController {
     public String getToken(@RequestBody AuthRequest authRequest) {
         Authentication authenticate = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getName(), authRequest.getPassword()));
         if (authenticate.isAuthenticated()) {
-            return service.generateToken(authRequest.getName());
+            UserCredential user = service.getUserByName(authRequest.getName());
+            return service.generateToken(user);
         }
         else {
             throw new RuntimeException("invalid access");

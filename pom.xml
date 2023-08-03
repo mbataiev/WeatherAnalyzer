@@ -22,6 +22,7 @@
 		<module>authentication-service</module>
 		<module>service-registry</module>
 		<module>api-gateway</module>
+		<module>weather-data-notifier</module>
 	</modules>
 	<properties>
 		<java.version>17</java.version>

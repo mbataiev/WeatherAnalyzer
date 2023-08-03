@@ -9,7 +9,6 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeParseException;
 
 @ControllerAdvice
 @Slf4j
@@ -28,20 +27,6 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         );
 
         return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
-    }
-
-    @ExceptionHandler(DateTimeParseException.class)
-    public ResponseEntity<Object> handleDateTimeParseException(DateTimeParseException exception,
-                                                               WebRequest webRequest) {
-        log.error(ERROR_LOG_MESSAGE_TEMPLATE, exception.getMessage());
-        ErrorDetails errorDetails = new ErrorDetails(
-                LocalDateTime.now(),
-                exception.getMessage(),
-                webRequest.getDescription(false),
-                "INCORRECT_DATA_FORMAT"
-        );
-
-        return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(Exception.class)

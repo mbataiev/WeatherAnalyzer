@@ -24,7 +24,7 @@ public class DataProcessorController {
                                              @RequestParam("city") String city) {
         WeatherDataDto processedData = service.parseJson(json);
         processedData.setCity(city);
-        log.info("parseWeatherData : Publish data -> {}",processedData);
+        log.info("Publish data -> {}", processedData);
         service.publishEvent(processedData);
         return processedData;
     }

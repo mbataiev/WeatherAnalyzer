@@ -28,7 +28,7 @@ public class DataProcessorServiceImpl implements DataProcessorService {
                 .weatherData(processedData)
                 .version(1L)
                 .build();
-        log.info("publishEvent : Published event -> {}", event);
+        log.info("Published event -> {}", event);
         producer.sendMessage(event);
     }
 }

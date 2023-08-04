@@ -19,7 +19,7 @@ public class EventProducer {
     private final KafkaTemplate<String, WeatherEvent> template;
 
     public void sendMessage(WeatherEvent event) {
-        log.info("sendMessage() : Weather event -> {}",event);
+        log.info("Weather event -> {}", event);
 
         Message<WeatherEvent> message = MessageBuilder
                 .withPayload(event)

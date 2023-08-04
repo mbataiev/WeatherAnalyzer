@@ -24,12 +24,7 @@ public class DataStorageController {
     @GetMapping("/{city}/{date}")
     public ResponseEntity<WeatherDataDto> getWeatherByDateAndCity(@PathVariable String city, @PathVariable String date) {
         WeatherDataDto weatherData = service.getWeatherByDateAndCity(city, date);
-
-        if (weatherData != null) {
-            return ResponseEntity.ok(weatherData);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+        return ResponseEntity.ok(weatherData);
     }
 
 }

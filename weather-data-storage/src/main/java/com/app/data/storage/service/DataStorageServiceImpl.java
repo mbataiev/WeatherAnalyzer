@@ -4,6 +4,7 @@ import com.app.common.domains.EventStatus;
 import com.app.common.domains.WeatherDataDto;
 import com.app.common.domains.WeatherEvent;
 import com.app.data.storage.entity.WeatherData;
+import com.app.data.storage.exception.ResourceNotFoundException;
 import com.app.data.storage.kafka.EventProducer;
 import com.app.data.storage.mapper.WeatherMapper;
 import com.app.data.storage.repository.WeatherRepository;
@@ -57,6 +58,9 @@ public class DataStorageServiceImpl implements DataStorageService {
         LocalDate searchDate = LocalDate.parse(date);
         List<WeatherData> list = repository.findByCityAndDate(city, searchDate);
         log.debug(list.toString());
-        return list.isEmpty() ? null : mapper.weatherToDto(list.get(0));
+        if (list.isEmpty()) {
+            throw new ResourceNotFoundException("Weather", "date and city", city + " " + date);
+        }
+        return mapper.weatherToDto(list.get(0));
     }
 }

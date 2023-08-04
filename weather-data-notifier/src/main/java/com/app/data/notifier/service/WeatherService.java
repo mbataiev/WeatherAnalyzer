@@ -1,7 +1,7 @@
 package com.app.data.notifier.service;
 
-import com.app.domains.WeatherDataDto;
-import com.app.domains.WeatherEvent;
+import com.app.common.domains.WeatherDataDto;
+import com.app.common.domains.WeatherEvent;
 
 import java.util.List;
 

@@ -1,9 +1,10 @@
 package com.app.data.notifier.service;
 
+import com.app.data.notifier.dto.ValidWeather;
 import com.app.data.notifier.repository.UserNotificationRepository;
-import com.app.domains.EventStatus;
-import com.app.domains.WeatherDataDto;
-import com.app.domains.WeatherEvent;
+import com.app.common.domains.EventStatus;
+import com.app.common.domains.WeatherDataDto;
+import com.app.common.domains.WeatherEvent;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -27,7 +28,7 @@ public class WeatherServiceImpl implements WeatherService {
     @Override
     public void filterNotification(WeatherDataDto weatherData) {
         String weather = weatherData.getWeather();
-        List<String> emails = repository.findAllEmailByWeather(weather);
+        List<String> emails = repository.findAllEmailByWeather(ValidWeather.fromString(weather));
         log.debug("Sending notification to emails -> {}", emails);
         sendNotification(emails, weather);
     }

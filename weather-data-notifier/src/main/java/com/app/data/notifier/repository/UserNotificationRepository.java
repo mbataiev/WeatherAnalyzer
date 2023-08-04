@@ -16,5 +16,5 @@ public interface UserNotificationRepository extends JpaRepository<UserNotificati
     List<UserNotification> findAllByEmail(String email);
 
     @Query("SELECT uc.email FROM UserNotification uc WHERE uc.weather = :weather")
-    List<String> findAllEmailByWeather(String weather);
+    List<String> findAllEmailByWeather(ValidWeather weather);
 }

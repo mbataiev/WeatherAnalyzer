@@ -23,15 +23,15 @@ public class NotifierController {
 
     @GetMapping("/all")
     public ResponseEntity<List<UserNotification>> getAllNotificationsByEmail(@RequestHeader("Authorization") @NonNull String authorizationHeader) {
-        String jwt = authorizationHeader.substring(7);
-         return ResponseEntity.ok(service.getAllNotificationsByEmail(jwt));
+        String jwt = authorizationHeader.replace("Bearer ", "");
+        return ResponseEntity.ok(service.getAllNotificationsByEmail(jwt));
     }
 
     @PostMapping("/subscribe")
     public ResponseEntity<String> subscribeNotification(@RequestHeader("Authorization") @NonNull String authorizationHeader,
                                                         @RequestParam("cityName") @NonNull String city,
                                                         @RequestParam("weather") @NonNull String weather) {
-        String jwt = authorizationHeader.substring(7);
+        String jwt = authorizationHeader.replace("Bearer ", "");
         service.subscribeNotification(jwt, city, weather);
         return ResponseEntity.ok("Successfully subscribed");
     }
@@ -40,14 +40,14 @@ public class NotifierController {
     public ResponseEntity<String> unsubscribeNotification(@RequestHeader("Authorization") @NonNull String authorizationHeader,
                                                           @RequestParam("cityName") @NonNull String city,
                                                           @RequestParam("weather") @NonNull String weather) {
-        String jwt = authorizationHeader.substring(7);
+        String jwt = authorizationHeader.replace("Bearer ", "");
         service.unsubscribeNotification(jwt, city, weather);
         return ResponseEntity.ok("Successfully unsubscribed");
     }
 
     @PostMapping("/unsubscribe/all")
     public ResponseEntity<String> unsubscribeAllNotifications(@RequestHeader("Authorization") @NonNull String authorizationHeader) {
-        String jwt = authorizationHeader.substring(7);
+        String jwt = authorizationHeader.replace("Bearer ", "");
         service.unsubscribeAllNotifications(jwt);
         return ResponseEntity.ok("Successfully unsubscribed from all notifications");
     }

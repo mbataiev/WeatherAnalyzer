@@ -5,11 +5,13 @@ import com.app.domains.EventStatus;
 import com.app.domains.WeatherDataDto;
 import com.app.domains.WeatherEvent;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@Slf4j
 @AllArgsConstructor
 public class WeatherServiceImpl implements WeatherService {
 
@@ -26,6 +28,7 @@ public class WeatherServiceImpl implements WeatherService {
     public void filterNotification(WeatherDataDto weatherData) {
         String weather = weatherData.getWeather();
         List<String> emails = repository.findAllEmailByWeather(weather);
+        log.debug("Sending notification to emails -> {}", emails);
         sendNotification(emails, weather);
     }
 

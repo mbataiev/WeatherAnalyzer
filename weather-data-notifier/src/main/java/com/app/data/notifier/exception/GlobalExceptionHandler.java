@@ -1,4 +1,4 @@
-package com.app.data.analytic.exception;
+package com.app.data.notifier.exception;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -27,6 +27,20 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         );
 
         return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(NotifyException.class)
+    public ResponseEntity<ErrorDetails> handleNotifyException(NotifyException exception,
+                                                                        WebRequest webRequest) {
+        log.error(ERROR_LOG_MESSAGE_TEMPLATE, exception.getMessage());
+        ErrorDetails errorDetails = new ErrorDetails(
+                LocalDateTime.now(),
+                exception.getMessage(),
+                webRequest.getDescription(false),
+                "BAD_REQUEST"
+        );
+
+        return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(Exception.class)

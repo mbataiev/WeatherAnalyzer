@@ -19,7 +19,7 @@ public class EventConsumer {
             groupId = "${spring.kafka.consumer.group-id}"
     )
     public void consume(WeatherEvent event) {
-        log.info("Weather event received in notifier service => {}", event);
+        log.info("Weather event -> {}", event);
         service.processEvent(event);
     }
 

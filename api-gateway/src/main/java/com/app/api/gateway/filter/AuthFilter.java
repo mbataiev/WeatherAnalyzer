@@ -30,7 +30,7 @@ public class AuthFilter extends AbstractGatewayFilterFactory<AuthFilter.Config> 
                 String authHeader = exchange.getRequest().getHeaders().get(HttpHeaders.AUTHORIZATION).get(0);
 
                 if (authHeader != null && authHeader.startsWith("Bearer ")) {
-                    authHeader = authHeader.substring(7);
+                    authHeader = authHeader.replace("Bearer ", "");
                 }
                 try {
                     // TODO: 02.08.2023 add microservice name //AUTH-SERVICE

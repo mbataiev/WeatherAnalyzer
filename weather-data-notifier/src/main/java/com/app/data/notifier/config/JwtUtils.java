@@ -5,6 +5,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -12,6 +13,7 @@ import java.security.Key;
 
 
 @Component
+@Slf4j
 public class JwtUtils {
 
     @Value("${app.jwt.secret}")
@@ -24,6 +26,7 @@ public class JwtUtils {
     public String getEmailFromJwt(String jwt) {
         validateToken(jwt);
         Claims claims = parseJwt(jwt);
+        log.debug("Claims -> {}", claims);
         return claims.get("email", String.class);
     }
 

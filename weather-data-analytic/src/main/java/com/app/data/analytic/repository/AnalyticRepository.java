@@ -6,11 +6,10 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.time.LocalDate;
-import java.util.Optional;
+import java.util.List;
 
 public interface AnalyticRepository extends JpaRepository<WeatherData, Long> {
 
-    Optional<WeatherData> findByCity(String city);
 
     @Query("SELECT AVG(w.temperature) FROM WeatherData w " +
             "WHERE w.city = :city AND DATE(w.createdDate) BETWEEN :startDate AND :endDate")
@@ -21,4 +20,5 @@ public interface AnalyticRepository extends JpaRepository<WeatherData, Long> {
             "GROUP BY w.weather ORDER BY COUNT(w.weather) DESC")
     String findPopularWeatherByCityAndPeriod(@Param("city") String city, @Param("startDate") LocalDate startDate, @Param("endDate") LocalDate endDate);
 
+    List<WeatherData> findByCity(String city);
 }

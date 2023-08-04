@@ -38,9 +38,9 @@ public class DataAnalyticServiceImpl implements DataAnalyticService {
     public Double getAvgTempByPeriodAndCity(@NotNull LocalDate startDate,
                                             @NotNull LocalDate endDate,
                                             @NotBlank String city) {
-        repository.findByCity(city).orElseThrow(
-                () -> new ResourceNotFoundException("City", "city", city)
-        );
+        if (repository.findByCity(city).isEmpty()) {
+            throw new ResourceNotFoundException("City", "city", city);
+        }
         return repository.findAvgTemperatureByCityAndPeriod(city, startDate, endDate);
     }
 
@@ -48,9 +48,10 @@ public class DataAnalyticServiceImpl implements DataAnalyticService {
     public String getPopularWeatherByPeriodAndCity(@NotNull LocalDate startDate,
                                                    @NotNull LocalDate endDate,
                                                    @NotBlank String city) {
-        repository.findByCity(city).orElseThrow(
-                () -> new ResourceNotFoundException("City", "city", city)
-        );
+        if (repository.findByCity(city).isEmpty()) {
+            throw new ResourceNotFoundException("City", "city", city);
+        }
         return repository.findPopularWeatherByCityAndPeriod(city, startDate, endDate);
     }
+
 }

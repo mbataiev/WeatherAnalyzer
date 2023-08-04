@@ -23,7 +23,6 @@ public class WeatherController {
     @GetMapping()
     public ResponseEntity<WeatherDataDto> getWeatherData(@RequestParam String cityName) {
         WeatherDataDto response = weatherService.getWeatherDataFromApi(cityName);
-        log.info("getWeatherData : collected data -> {}", response);
         return ResponseEntity.ok(response);
     }
 

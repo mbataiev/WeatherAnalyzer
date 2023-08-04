@@ -36,7 +36,8 @@ public class WeatherServiceImpl implements WeatherService {
         );
     }
 
-    private Optional<WeatherDataDto> postWeather(String json, String city) {
+    @Override
+    public Optional<WeatherDataDto> postWeather(String json, String city) {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
 

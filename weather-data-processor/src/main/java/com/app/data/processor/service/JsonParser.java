@@ -17,7 +17,7 @@ public class JsonParser {
     private static final Double FROM_MPH_TO_MS = 0.44704;
 
     public static WeatherDataDto jsonToWeatherDto(String json) {
-        log.debug("Json -> {}",json);
+        log.debug("Json -> {}", json);
         if (json == null) throw new ResourceNotFoundException("Json", "json", null);
 
         com.google.gson.JsonParser jsonParser = new com.google.gson.JsonParser();
@@ -28,6 +28,7 @@ public class JsonParser {
             log.error(String.format("Invalid json -> %s", json));
             throw new ResourceNotFoundException("Json", "json", json);
         }
+        log.debug("Json Object -> {}", jsonObject);
         String weatherName = jsonObject.getAsJsonArray("weather")
                 .get(0).getAsJsonObject().get("main").getAsString();
         Double temperature = jsonObject.getAsJsonObject("main").get("temp").getAsDouble();

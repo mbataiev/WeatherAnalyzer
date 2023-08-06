@@ -10,7 +10,6 @@ import java.util.List;
 
 public interface AnalyticRepository extends JpaRepository<WeatherData, Long> {
 
-
     @Query("SELECT AVG(w.temperature) FROM WeatherData w " +
             "WHERE w.city = :city AND DATE(w.createdDate) BETWEEN :startDate AND :endDate")
     Double findAvgTemperatureByCityAndPeriod(String city, LocalDate startDate, LocalDate endDate);

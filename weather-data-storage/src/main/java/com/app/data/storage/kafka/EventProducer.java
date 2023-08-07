@@ -18,6 +18,7 @@ public class EventProducer {
     private NewTopic topic;
     private final KafkaTemplate<String, WeatherEvent> template;
 
+
     public void sendMessage(WeatherEvent event) {
         log.info("Weather event -> {}",event);
 
